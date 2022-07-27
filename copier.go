@@ -31,9 +31,10 @@ const (
 	Int     int     = 0
 	Float32 float32 = 0
 	Float64 float64 = 0
-
-	StructTag = "copier"
 )
+
+// StructTag support custom struct tag
+var StructTag = "copier"
 
 // Option sets copy options
 type Option struct {
