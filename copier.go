@@ -31,6 +31,8 @@ const (
 	Int     int     = 0
 	Float32 float32 = 0
 	Float64 float64 = 0
+
+	StructTag = "copier"
 )
 
 // Option sets copy options
@@ -616,7 +618,7 @@ func getFlags(dest, src reflect.Value, toType, fromType reflect.Type) (flags, er
 
 	// Get a list dest of tags
 	for _, field := range toTypeFields {
-		tags := field.Tag.Get("copier")
+		tags := field.Tag.Get(StructTag)
 		if tags != "" {
 			var name string
 			var err error
